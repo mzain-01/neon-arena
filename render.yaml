@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: neon-arena
+    runtime: node
+    plan: free
+    buildCommand: node --version
+    startCommand: node server.mjs
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.13.0
+    autoDeployTrigger: commit
